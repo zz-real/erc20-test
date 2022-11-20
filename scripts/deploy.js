@@ -10,7 +10,13 @@ async function main() {
   tokenFactory = await hre.ethers.getContractFactory("ERC20MSHKToken");
   tokenContract = await tokenFactory.deploy();
 
-  console.log(` hardhat token deployed to ${tokenContract.address}`);
+  console.log(` hardhat ERC20MSHKToken deployed to ${tokenContract.address}`);
+
+  
+  myNFTFactory = await hre.ethers.getContractFactory("MyNFT");
+  myNFTContract = await myNFTFactory.deploy();
+
+  console.log(` hardhat MyNFT deployed to ${myNFTContract.address}`);
 }
 
 // We recommend this pattern to be able to use async/await everywhere
